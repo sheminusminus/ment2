@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const fs = require('fs');
 const mysql = require('mysql');
 const app = express();
@@ -15,6 +16,13 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve('public', 'index.html'));
   });
 }
+
+app.use(express.static('public'));
+
+// Return the main index.html, so react-router render the route in the client
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('public', 'index.html'));
+});
 
 const host = "localhost"
 const user = "root"
