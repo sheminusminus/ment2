@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import routes from "./config/routes";
-import Main from './Main';
+import Landing from './components/Landing';
 
-ReactDOM.render(<Main/>, document.getElementById("app"));
+ReactDOM.render(<Landing/>, document.getElementById("app"));
 

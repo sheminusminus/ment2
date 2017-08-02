@@ -229,6 +229,31 @@ hr.small {
     height: 500px;
 }
 
+/* Trigger buttons */
+.mentor-img-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.mentor-img-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+
+
 @media(max-width:768px) {
     .map {
         height: 75%;
