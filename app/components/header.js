@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/lib/Navbar';
 
 class Header extends Component {
     onLoginClick() {
-        console.log('Clicked');
+        this.props.onLoginClick();
     }
     render() {
         return (

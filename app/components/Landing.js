@@ -243,7 +243,9 @@ class Main extends React.Component {
 
                 <MenteeModal
                     isOpen={this.state.authModalOpen}
-                    toggleModal={this.toggleModal} />
+                    toggleModal={this.toggleModal}
+                    setAuth={this.props.setAuth}
+                    isAuth={this.props.isAuthenticated} />
 
             </div>
         );
