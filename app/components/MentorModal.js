@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import Auth0Lock from 'auth0-lock';
 import {Grid, Row, Col} from 'react-bootstrap';
-
 import Header from './header';
 import Home from './home';
-
-// why is this imported?
-import Landing from './Landing';
 
 
 class MenteeModal extends React.Component {      
@@ -95,7 +91,7 @@ class MenteeModal extends React.Component {
         return(
             <div id="container">
                 <header>
-                    <h1>Mentee Node Quiz</h1>
+                    <h1>Mentor Node Quiz</h1>
                 </header>
                 <section>
                     <div id="results"></div>
@@ -132,8 +128,7 @@ class MenteeModal extends React.Component {
                         <input type="submit" value="Submit Answers" />
                     </form>
 
-                    {/* !! you can't have a function definition in the middle of your html !! */}
-
+                    {/* you can't have a function definition in the middle of your html */}
                     {/* function submitAnswers() {
                         var total = 5;
                         var score = 0;

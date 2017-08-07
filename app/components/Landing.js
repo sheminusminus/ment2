@@ -7,21 +7,33 @@ import {Grid, Row, Col} from 'react-bootstrap';
 
 
 // components
+// import mentee modal
 import MenteeModal from './MenteeModal';
+// import mentor modal
+import MentorModal from './MentorModal';
 
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            authModalOpen: false
+            menteeModalOpen: false,
+            mentorModalOpen: false
         };
-        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleMenteeModal = this.toggleMenteeModal.bind(this);
+        this.toggleMentorModal = this.toggleMentorModal.bind(this);
     }
 
-    toggleModal() {
+    toggleMenteeModal() {
         console.log("toggle");
         this.setState({
-            authModalOpen:  !this.state.authModalOpen
+            menteeModalOpen:  !this.state.menteeModalOpen
+        });
+    }
+
+    toggleMentorModal() {
+        console.log("toggle");
+        this.setState({
+            mentorModalOpen:  !this.state.mentorModalOpen
         });
     }
 
@@ -63,8 +75,8 @@ class Main extends React.Component {
                             <area target="" alt="" title="" href="" coords="353,390,83" shape="circle"/>
                             <area target="" alt="" title="" href="" coords="894,386,78" shape="circle"/>
                         </map>
-                       <button className="mentor-img-left" onClick={this.toggleModal} />
-                       <button className="mentor-img-right" onClick={this.toggleModal} />
+                       <button className="mentor-img-left" onClick={this.toggleMenteeModal} />
+                       <button className="mentor-img-right" onClick={this.toggleMentorModal} />
                     </div>
                 </header>
 
@@ -245,8 +257,14 @@ class Main extends React.Component {
                 </footer>
 
                 <MenteeModal
-                    isOpen={this.state.authModalOpen}
-                    toggleModal={this.toggleModal}
+                    isOpen={this.state.menteeModalOpen}
+                    toggleModal={this.toggleMenteeModal}
+                    setAuth={this.props.setAuth}
+                    isAutth={this.props.isAuthenticated} />
+
+                <MentorModal
+                    isOpen={this.state.mentorModalOpen}
+                    toggleModal={this.toggleMentorModal}
                     setAuth={this.props.setAuth}
                     isAutth={this.props.isAuthenticated} />
 
