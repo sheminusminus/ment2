@@ -2,6 +2,9 @@
 // absolute imports
 import React from "react";
 import Modal from 'react-modal';
+import Auth0Lock from 'auth0-lock';
+import {Grid, Row, Col} from 'react-bootstrap';
+
 
 // components
 import MenteeModal from './MenteeModal';
@@ -245,7 +248,7 @@ class Main extends React.Component {
                     isOpen={this.state.authModalOpen}
                     toggleModal={this.toggleModal}
                     setAuth={this.props.setAuth}
-                    isAuth={this.props.isAuthenticated} />
+                    isAutth={this.props.isAuthenticated} />
 
             </div>
         );
